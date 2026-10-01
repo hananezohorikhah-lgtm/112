@@ -1,0 +1,29 @@
+۱۲_ تابع ترکیب تعداد زیر مجموعه های متفاوت نامرتب) عنصری که ممکن است از یک مجموعه n عنصری ساخته شود را نشان میدهد این تابع با رابطه زیر بیان می شود:
+C(n,k) = (n!)/(k!(n - k)!)
+این تابع را پیاده سازی و آزمایش کنید.
+
+پاسخ:
+#include <iostream>
+using namespace std;
+
+int fact(int n)
+{
+    int f = 1;
+
+    for (int i = 1; i <= n; i++)
+        f *= i;
+
+    return f;
+}
+
+int comb(int n, int k)
+{
+    return fact(n) / (fact(k) * fact(n-k));
+}
+
+int main()
+{
+    cout << comb(5, 2);
+
+    return 0;
+}
